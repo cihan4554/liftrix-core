@@ -220,7 +220,9 @@ export async function GET(request: Request) {
       logs: reportLogs 
     }, { status: 200 });
 
-  } catch (error) {
+  } catch (error: any) {
     return NextResponse.json({ error: 'Sunucu Hatası: ' + error.message }, { status: 500 });
   }
 }
+
+
