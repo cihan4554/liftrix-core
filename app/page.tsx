@@ -207,7 +207,7 @@ export default function Dashboard() {
   }, [currentTab, session, currentGymId, userProfile]);
 
   // --- KURUCU: YENİ SALON EKLEME VE OTOMATİK PATRON KAYDI ---
-  const handleAddNewGym = async (e) => {
+  const handleAddNewGym = async (e: any) => {
     e.preventDefault();
     setLoading(true);
     
