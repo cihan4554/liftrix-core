@@ -260,7 +260,7 @@ export default function Dashboard() {
   };
 
   // --- ŞUBE AYARLARI GÜNCELLEME ---
-  const handleUpdatePrices = async (e) => {
+  const handleUpdatePrices = async (e: any) => {
     e.preventDefault();
     setLoading(true);
     for (const [months, price] of Object.entries(membershipPrices)) {
