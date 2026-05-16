@@ -152,9 +152,9 @@ export default function Dashboard() {
         });
       }, 100);
     } else {
-      clearInterval(timerRef.current);
+      clearInterval(timerRef.current as any);
     }
-    return () => clearInterval(timerRef.current);
+    return () => clearInterval(timerRef.current as any);
   }, [currentTab, appMode, session]);
 
   // --- DİNAMİK VERİ ÇEKME (CURRENT_GYM_ID'YE GÖRE) ---
