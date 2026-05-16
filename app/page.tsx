@@ -101,7 +101,7 @@ export default function Dashboard() {
         // ŞUBEYE ÖZEL FİYATLARI ÇEKME
         const { data: plans } = await supabase.from('membership_plans').select('*').eq('gym_id', profile.gym_id);
         if (plans && plans.length > 0) {
-          const pMap = {};
+          const pMap: any = {};
           plans.forEach(pl => pMap[pl.duration_months] = pl.price);
           setMembershipPrices(prev => ({ ...prev, ...pMap }));
         }
