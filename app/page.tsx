@@ -126,7 +126,7 @@ export default function Dashboard() {
     return () => subscription.unsubscribe();
   }, []);
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: any) => {
     e.preventDefault();
     setAuthLoading(true);
     setAuthError('');
