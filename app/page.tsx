@@ -253,7 +253,7 @@ export default function Dashboard() {
       fetchData();
       
     } catch (err) {
-      alert("HATA: " + err.message);
+      alert("HATA: " + (err as any).message);
     }
     
     setLoading(false);
