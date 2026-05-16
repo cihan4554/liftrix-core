@@ -224,5 +224,6 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'Sunucu Hatası: ' + error.message }, { status: 500 });
   }
 }
+// Vercel tetikleme testi
 
 
