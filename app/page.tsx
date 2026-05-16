@@ -175,24 +175,24 @@ export default function Dashboard() {
 
     const { data: mList, count } = await supabase.from('members').select('*', { count: 'exact' }).eq('gym_id', currentGymId);
     setTotalMembers(count || 0);
-    setMembers(mList || []);
+    setMembers((mList || []) as any);
 
     if (userProfile?.role === 'superadmin' || userProfile?.role === 'admin') {
       const { data: fList } = await supabase.from('finance_logs').select('*').eq('gym_id', currentGymId).order('created_at', { ascending: false });
-      setTransactions(fList || []);
+      setTransactions((fList || []) as any);
     }
 
     const { data: cList } = await supabase.from('classes').select('*').eq('gym_id', currentGymId).order('time', { ascending: true });
-    setClasses(cList || []);
+    setClasses((cList || []) as any);
     const { data: bList } = await supabase.from('bookings').select('*').eq('gym_id', currentGymId);
-    setBookings(bList || []);
+    setBookings((bList || []) as any);
 
     const { data: pList } = await supabase.from('products').select('*').eq('gym_id', currentGymId).order('name', { ascending: true });
-    setProducts(pList || []);
+    setProducts((pList || []) as any);
 
     if (userProfile?.role === 'superadmin') {
       const { data: gymsData } = await supabase.from('gyms').select('*').order('created_at', { ascending: false });
-      setAllGyms(gymsData || []);
+      setAllGyms((gymsData || []) as any);
     }
   };
 
