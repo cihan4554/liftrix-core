@@ -190,7 +190,7 @@ export default function Dashboard() {
     const { data: pList } = await supabase.from('products').select('*').eq('gym_id', currentGymId).order('name', { ascending: true });
     setProducts((pList || []) as any);
 
-    if (userProfile?.role === 'superadmin') {
+    if ((userProfile as any)?.role === 'superadmin') {
       const { data: gymsData } = await supabase.from('gyms').select('*').order('created_at', { ascending: false });
       setAllGyms((gymsData || []) as any);
     }
