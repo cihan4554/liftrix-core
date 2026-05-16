@@ -35,7 +35,7 @@ const SidebarDensityMap = ({ checkinData }: { checkinData: any }) => {
 };
 
 export default function Dashboard() {
-  const [session, setSession] = useState(null);
+ const [session, setSession] = useState<any>(null);
   const [authLoading, setAuthLoading] = useState(true);
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
