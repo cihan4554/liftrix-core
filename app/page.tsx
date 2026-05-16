@@ -164,10 +164,10 @@ export default function Dashboard() {
     const today = new Date().toISOString().split('T')[0];
     
     const { data: list } = await supabase.from('checkins').select('*').eq('gym_id', currentGymId).order('created_at', { ascending: false }).limit(6);
-    setCheckins(list || []);
+    setCheckins((list || []) as any);
 
     const { data: allDay } = await supabase.from('checkins').select('*').eq('gym_id', currentGymId).gte('created_at', today).order('created_at', { ascending: true });
-    setDailyCheckins(allDay || []);
+    setDailyCheckins((allDay || []) as any);
 
     const latestStatusPerMember = {};
     allDay?.forEach((log) => { latestStatusPerMember[log.member_name] = log.action; });
