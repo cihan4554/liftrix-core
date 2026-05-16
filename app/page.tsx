@@ -85,7 +85,7 @@ export default function Dashboard() {
 
   // --- 1. SUPABASE AUTH & DİNAMİK PROFİL YÜKLEME ---
   useEffect(() => {
-    const loadProfile = async (currentUser) => {
+    const loadProfile = async (currentUser: any) => {
       if (!currentUser) return;
       const { data: profile } = await supabase.from('profiles').select('*').eq('id', currentUser.id).single();
       
