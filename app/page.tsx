@@ -145,7 +145,7 @@ export default function Dashboard() {
   useEffect(() => {
     if (session && (currentTab === 'turnstile' || appMode === 'member')) {
       generateNewQR();
-      timerRef.current = setInterval(() => {
+      (timerRef as any).current = setInterval(() => {
         setQrProgress((prev) => {
           if (prev <= 0) { generateNewQR(); return 100; }
           return prev - 1;
