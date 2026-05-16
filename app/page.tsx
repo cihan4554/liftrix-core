@@ -7,7 +7,7 @@ import { createClient } from '@supabase/supabase-js';
 // --- SIDEBAR YOĞUNLUK PANELİ ---
 const SidebarDensityMap = ({ checkinData }: { checkinData: any }) => {
   const hourlyStats = Array(24).fill(0);
-  checkinData.forEach((item) => {
+  checkinData.forEach((item: any) => {
     const hour = new Date(item.created_at).getHours();
     if (item.action === 'GİRİŞ') hourlyStats[hour]++;
   });
