@@ -169,8 +169,8 @@ export default function Dashboard() {
     const { data: allDay } = await supabase.from('checkins').select('*').eq('gym_id', currentGymId).gte('created_at', today).order('created_at', { ascending: true });
     setDailyCheckins((allDay || []) as any);
 
-    const latestStatusPerMember = {};
-    allDay?.forEach((log) => { latestStatusPerMember[log.member_name] = log.action; });
+   const latestStatusPerMember: any = {};
+    allDay?.forEach((log: any) => { latestStatusPerMember[log.member_name] = log.action; });
     setInGymCount(Object.values(latestStatusPerMember).filter((status) => status === 'GİRİŞ').length);
 
     const { data: mList, count } = await supabase.from('members').select('*', { count: 'exact' }).eq('gym_id', currentGymId);
