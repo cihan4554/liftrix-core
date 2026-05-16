@@ -222,8 +222,8 @@ export default function Dashboard() {
 
       // 2. Yeni Patronu arka planda Auth sistemine kaydet
       // (Kendi oturumumuzu bozmamak için 'persistSession: false' ile gizli bir bağlantı açıyoruz)
-      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || import.meta.env?.VITE_SUPABASE_URL;
-      const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || import.meta.env?.VITE_SUPABASE_ANON_KEY;
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+      const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
       
       const tempClient = createClient(supabaseUrl, supabaseKey, {
         auth: { persistSession: false }
