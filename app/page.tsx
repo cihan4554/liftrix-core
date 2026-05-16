@@ -177,7 +177,7 @@ export default function Dashboard() {
     setTotalMembers(count || 0);
     setMembers((mList || []) as any);
 
-    if (userProfile?.role === 'superadmin' || userProfile?.role === 'admin') {
+    if ((userProfile as any)?.role === 'superadmin' || (userProfile as any)?.role === 'admin') {
       const { data: fList } = await supabase.from('finance_logs').select('*').eq('gym_id', currentGymId).order('created_at', { ascending: false });
       setTransactions((fList || []) as any);
     }
