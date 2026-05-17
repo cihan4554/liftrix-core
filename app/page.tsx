@@ -644,10 +644,10 @@ export default function Dashboard() {
                           <div>
                             <p className="text-zinc-500 text-[10px] font-black uppercase tracking-widest mb-2 italic">SAĞLIK NOTU</p>
                             {isEditing ? (
-                              <textarea className="bg-zinc-800 text-red-400 text-xs p-4 rounded-2xl border border-lime-400 w-full outline-none h-24" value={selectedMember.injury_notes || ''} onChange={(e) => setSelectedMember({ ...selectedMember, injury_notes: e.target.value })} />
-                            ) : (
-                              <p className="text-xs bg-red-500/10 text-red-400 p-4 rounded-2xl border border-red-500/20">{selectedMember.injury_notes || 'KAYIT YOK'}</p>
-                            )}
+                              <textarea className="bg-zinc-800 text-red-400 text-xs p-4 rounded-2xl border border-lime-400 w-full outline-none h-24" value={(selectedMember as any).injury_notes || ''} onChange={(e) => (setSelectedMember as any)({ ...(selectedMember as any), injury_notes: e.target.value })} />
+                              ) : (
+                              <p className="text-xs bg-red-500/10 text-red-400 p-4 rounded-2xl border border-red-500/20">{(selectedMember as any).injury_notes || 'KAYIT YOK'}</p>
+                                )}
                           </div>
                         </div>
                         <div>
