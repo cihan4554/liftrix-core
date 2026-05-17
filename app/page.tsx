@@ -606,7 +606,7 @@ export default function Dashboard() {
                 <button onClick={() => setShowAddModal(true)} className="w-full bg-lime-400 text-black py-4 rounded-2xl font-black uppercase italic text-sm transition-all shadow-lg">+ YENİ ÜYE KAYDI</button>
                 <input type="text" placeholder="ÜYE ARA..." className="w-full bg-zinc-900 border border-zinc-800 rounded-2xl px-6 py-4 text-sm font-bold outline-none uppercase" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
                 <div className="flex-1 bg-zinc-900/20 border border-zinc-800 rounded-3xl overflow-y-auto custom-scrollbar">
-                  {filteredMembers.map((m) => (
+                  {(filteredMembers as any).map((m: any) => (
                     <button key={m.id} onClick={() => { setSelectedMember(m); setIsEditing(false); }} className={`w-full text-left px-6 py-4 border-b border-zinc-900 last:border-0 transition-all ${selectedMember?.id === m.id ? 'bg-zinc-800 text-lime-400' : 'hover:bg-zinc-900 text-zinc-400'}`}><p className="font-black text-xs uppercase italic tracking-widest">{m.full_name}</p></button>
                   ))}
                 </div>
