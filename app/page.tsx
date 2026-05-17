@@ -653,10 +653,10 @@ export default function Dashboard() {
                         <div>
                           <p className="text-zinc-500 text-[10px] font-black uppercase tracking-widest mb-2 italic">PROGRAM</p>
                           {isEditing ? (
-                            <textarea className="bg-zinc-800 text-zinc-300 text-xs p-4 rounded-2xl border border-lime-400 w-full outline-none h-40 uppercase" value={selectedMember.current_program || ''} onChange={(e) => setSelectedMember({ ...selectedMember, current_program: e.target.value })} />
-                          ) : (
-                            <p className="text-xs bg-zinc-800 p-4 rounded-2xl border border-zinc-700 italic text-zinc-300 h-40 overflow-y-auto uppercase tracking-tighter">{selectedMember.current_program || 'PROGRAM ATANMADI'}</p>
-                          )}
+  <textarea className="bg-zinc-800 text-zinc-300 text-xs p-4 rounded-2xl border border-lime-400 w-full outline-none h-40 uppercase" value={(selectedMember as any).current_program || ''} onChange={(e) => (setSelectedMember as any)({ ...(selectedMember as any), current_program: e.target.value })} />
+) : (
+  <p className="text-xs bg-zinc-800 p-4 rounded-2xl border border-zinc-700 italic text-zinc-300 h-40 overflow-y-auto uppercase tracking-tighter">{(selectedMember as any).current_program || 'PROGRAM ATANMADI'}</p>
+)}
                         </div>
                       </div>
                     </div>
