@@ -729,11 +729,11 @@ export default function Dashboard() {
                 <div className="flex-1 bg-zinc-900/30 border border-zinc-900 rounded-[2rem] p-6 overflow-hidden flex flex-col">
                   <input type="text" placeholder="ÜYE ARA..." className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-[10px] font-bold outline-none mb-4 uppercase" onChange={e => setSearchQuery(e.target.value)} />
                   <div className="flex-1 overflow-y-auto space-y-2 pr-1 custom-scrollbar">
-                    {filteredMembers.map(m => (
-                      <button key={m.id} onClick={() => setSelectedMember(m)} className={`w-full text-left px-4 py-3 rounded-xl border transition-all ${selectedMember?.id === m.id ? 'bg-lime-400 border-lime-400 text-black' : 'bg-zinc-950 border-zinc-800 text-zinc-400 hover:border-zinc-600'}`}>
-                        <p className="text-[10px] font-black uppercase italic tracking-widest">{m.full_name}</p>
+                    {(filteredMembers as any).map((m: any) => (
+                      <button key={m.id} onClick={() => setSelectedMember(m)} className={`w-full text-left px-4 py-3 rounded-xl border transition-all ${(selectedMember as any)?.id === m.id ? 'bg-lime-400 border-lime-400 text-black' : 'bg-zinc-950 border-zinc-800 text-zinc-400 hover:border-zinc-600'}`}>
+                      <p className="text-[10px] font-black uppercase italic tracking-widest">{m.full_name}</p>
                       </button>
-                    ))}
+                      ))}
                   </div>
                 </div>
               </div>
