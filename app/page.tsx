@@ -338,10 +338,10 @@ export default function Dashboard() {
   const handleUpdateMember = async () => {
     setLoading(true);
     await supabase.from('members').update({
-        full_name: selectedMember.full_name, phone: selectedMember.phone,
-        injury_notes: selectedMember.injury_notes, current_program: selectedMember.current_program,
-        membership_end: selectedMember.membership_end,
-      }).eq('id', selectedMember.id);
+        full_name: (selectedMember as any).full_name, phone: (selectedMember as any).phone,
+      injury_notes: (selectedMember as any).injury_notes, current_program: (selectedMember as any).current_program,
+      membership_end: (selectedMember as any).membership_end,
+      }).eq('id', (selectedMember as any).id);
     setIsEditing(false); fetchData(); setLoading(false);
   };
 
