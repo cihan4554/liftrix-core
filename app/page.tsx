@@ -748,7 +748,7 @@ export default function Dashboard() {
                   <button onClick={() => { setNewProduct({ id: null, name: '', price: '', stock: '' }); setShowProductModal(true); }} className="bg-zinc-800 text-zinc-400 px-6 py-2 rounded-xl font-black text-[10px] shadow-lg hover:text-white transition-all">+ YENİ ÜRÜN EKLE</button>
                 </div>
                 <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar grid grid-cols-3 gap-4">
-                  {products.map(p => (
+                  {(products as any).map((p: any) => (
                     <div key={p.id} onClick={() => { if(p.stock > 0) addToCart(p); }} className={`relative flex flex-col items-start p-6 rounded-3xl border transition-all text-left cursor-pointer group ${p.stock > 0 ? 'bg-zinc-950 border-zinc-800 hover:border-lime-400 active:scale-95' : 'bg-red-950/20 border-red-900/30 opacity-50'}`}>
                       <div className="flex justify-between w-full mb-1 items-start">
                         <p className="text-xs font-black uppercase italic text-zinc-500">STOK: {p.stock}</p>
