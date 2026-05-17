@@ -767,7 +767,7 @@ export default function Dashboard() {
                   {cart.length === 0 ? (
                      <div className="h-full flex items-center justify-center text-zinc-700 font-black uppercase italic tracking-widest text-xs">Sepet Boş</div>
                   ) : (
-                    {(cart as any).map((item: any) => (
+                    (cart as any).map((item: any) => (
                       <div key={item.id} className="bg-zinc-900 p-4 rounded-2xl flex justify-between items-center group">
                         <div>
                           <p className="font-black text-sm uppercase italic text-white tracking-tighter">{item.name}</p>
