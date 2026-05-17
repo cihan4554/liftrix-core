@@ -352,7 +352,7 @@ export default function Dashboard() {
     setShowFinanceModal(false); setNewTx({ type: 'GELİR', amount: '', method: 'NAKİT', description: '' }); fetchData(); setLoading(false);
   };
 
-  const handleAddClass = async (e) => {
+  const handleAddClass = async (e: any) => {
     e.preventDefault(); setLoading(true);
     await supabase.from('classes').insert([{ ...newClass, gym_id: currentGymId }]);
     setShowClassModal(false); fetchData(); setLoading(false);
