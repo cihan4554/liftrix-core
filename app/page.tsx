@@ -855,7 +855,7 @@ export default function Dashboard() {
           )}
 
           {/* AYARLAR PANELİ */}
-          {currentTab === 'settings' && (userProfile?.role === 'superadmin' || userProfile?.role === 'admin') && (
+          {currentTab === 'settings' && ((userProfile as any)?.role === 'superadmin' || (userProfile as any)?.role === 'admin') && (
             <div className="flex-1 flex gap-8 overflow-y-auto custom-scrollbar animate-in fade-in duration-500 items-start justify-center pt-10 pb-10">
                <div className="w-full max-w-2xl bg-zinc-950 border border-zinc-900 rounded-[3rem] p-10 shadow-2xl shrink-0">
                  <h3 className="text-2xl font-black italic text-lime-400 mb-8 uppercase tracking-tighter border-b border-zinc-800 pb-4">ŞUBE ÜCRET AYARLARI</h3>
