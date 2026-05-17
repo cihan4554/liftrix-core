@@ -345,7 +345,7 @@ export default function Dashboard() {
     setIsEditing(false); fetchData(); setLoading(false);
   };
 
-  const handleAddTransaction = async (e) => {
+  const handleAddTransaction = async (e: any) => {
     e.preventDefault();
     setLoading(true);
     await supabase.from('finance_logs').insert([{ ...newTx, amount: Number(newTx.amount), gym_id: currentGymId }]);
