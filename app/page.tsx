@@ -588,7 +588,7 @@ export default function Dashboard() {
                 <section className="col-span-1 bg-red-500/5 border border-red-500/20 rounded-[3rem] p-8 flex flex-col overflow-hidden text-left">
                   <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-red-500 italic mb-6">Riskli Üyeler (7 Gün)</h4>
                   <div className="flex-1 overflow-y-auto space-y-4 custom-scrollbar pr-2">
-                    {getAtRiskMembers().map((m) => (
+                    {(getAtRiskMembers() as any).map((m: any) => (
                       <div key={m.id} className="bg-zinc-900 border border-zinc-800 p-4 rounded-2xl flex flex-col gap-3">
                         <div className="flex justify-between items-start"><p className="font-black text-xs uppercase italic text-white leading-none">{m.full_name}</p><p className="font-mono text-[10px] text-orange-400">{m.membership_end.split('-').reverse().join('.')}</p></div>
                         <button onClick={() => sendWhatsApp(m)} className="w-full bg-green-600 hover:bg-green-500 text-white py-2 rounded-xl text-[9px] font-black uppercase flex items-center justify-center gap-2 italic">HATIRLATMA GÖNDER</button>
