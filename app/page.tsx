@@ -833,7 +833,7 @@ export default function Dashboard() {
                   <button onClick={() => setShowFinanceModal(true)} className="bg-lime-400 text-black px-6 py-2 rounded-xl font-black uppercase text-[10px] italic hover:scale-105 active:scale-95 transition-all shadow-lg">+ İŞLEM EKLE</button>
                 </div>
                 <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-3">
-                  {transactions.length > 0 ? transactions.map((t) => (
+                  {transactions.length > 0 ? (transactions as any).map((t: any) => (
                     <div key={t.id} className="bg-zinc-950/80 border border-zinc-800 p-4 rounded-2xl flex justify-between items-center group hover:border-zinc-600 transition-colors">
                       <div className="flex items-center gap-4">
                         <div className={`w-2 h-8 rounded-full ${t.type === 'GELİR' ? 'bg-lime-400 shadow-[0_0_8px_#a3e635]' : 'bg-red-500 shadow-[0_0_8px_#ef4444]'}`}></div>
