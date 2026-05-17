@@ -382,7 +382,7 @@ export default function Dashboard() {
   };
 
   // --- GÜNCEL: ÜYE KAYDI VE OTOMATİK FİNANS İŞLEMİ ---
-  const handleAddMember = async (e) => {
+  const handleAddMember = async (e: any) => {
     e.preventDefault(); setLoading(true);
     const duration = newMember.membership_duration;
     const fee = membershipPrices[duration];
