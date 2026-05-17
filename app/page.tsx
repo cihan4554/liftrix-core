@@ -628,10 +628,10 @@ export default function Dashboard() {
                           <div className="flex gap-2 mt-4">
                             <span className="text-[10px] bg-lime-400 text-black px-3 py-1 rounded-full font-black uppercase italic tracking-widest">AKTİF ÜYE</span>
                             {isEditing ? (
-                              <input className="bg-zinc-800 text-zinc-400 text-[10px] font-black italic uppercase outline-none border-b border-lime-400 px-2" value={selectedMember.phone || ''} onChange={(e) => setSelectedMember({ ...selectedMember, phone: e.target.value })} placeholder="Telefon No" />
-                            ) : (
-                              <span className="text-[10px] bg-zinc-800 text-zinc-500 px-3 py-1 rounded-full font-black uppercase italic tracking-widest">{selectedMember.phone || 'Tel Yok'}</span>
-                            )}
+                              <input className="bg-zinc-800 text-zinc-400 text-[10px] font-black italic uppercase outline-none border-b border-lime-400 px-2" value={(selectedMember as any).phone || ''} onChange={(e) => (setSelectedMember as any)({ ...(selectedMember as any), phone: e.target.value })} placeholder="Telefon No" />
+                              ) : (
+                              <span className="text-[10px] bg-zinc-800 text-zinc-500 px-3 py-1 rounded-full font-black uppercase italic tracking-widest">{(selectedMember as any).phone || 'Tel Yok'}</span>
+                              )}
                           </div>
                         </div>
                         <div className="text-right leading-none">
