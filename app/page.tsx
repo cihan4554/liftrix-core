@@ -1006,7 +1006,7 @@ export default function Dashboard() {
               
               <div className="bg-lime-400/10 border border-lime-400/20 p-3 rounded-xl mt-2">
                 <p className="text-[9px] text-lime-400 font-black uppercase text-center italic tracking-widest">
-                  Not: Kayıt tamamlandığında ₺{membershipPrices[newMember.membership_duration]} kasaya otomatik işlenecektir.
+                  Not: Kayıt tamamlandığında ₺{(membershipPrices as any)[newMember.membership_duration]} kasaya otomatik işlenecektir.
                 </p>
               </div>
 
