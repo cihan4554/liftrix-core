@@ -377,7 +377,7 @@ export default function Dashboard() {
     else alert("Numara yok.");
   };
 
-  const handleAction = async (type, name) => {
+  const handleAction = async (type: any, name: any) => {
     await supabase.from('checkins').insert([{ member_name: name, action: type, gym_id: currentGymId }]); fetchData();
   };
 
