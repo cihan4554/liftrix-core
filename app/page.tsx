@@ -276,7 +276,7 @@ export default function Dashboard() {
   };
 
   // --- MAĞAZA VE DİĞER İŞLEMLER ---
-  const handleSaveProduct = async (e) => {
+  const handleSaveProduct = async (e: any) => {
     e.preventDefault();
     setLoading(true);
     if (newProduct.id) {
