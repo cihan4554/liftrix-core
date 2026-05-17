@@ -358,10 +358,10 @@ export default function Dashboard() {
     setShowClassModal(false); fetchData(); setLoading(false);
   };
 
-  const handleBooking = async (classId, member) => {
+  const handleBooking = async (classId: any, member: any) => {
     if (!member) { alert("Üye seçin!"); return; }
-    const classInfo = classes.find(c => c.id === classId);
-    const classBookings = bookings.filter(b => b.class_id === classId);
+    const classInfo = (classes as any).find((c: any) => c.id === classId);
+    const classBookings = (bookings as any).filter((b: any) => b.class_id === classId);
     if (classBookings.length >= classInfo.capacity) { alert("Dolu!"); return; }
     if (classBookings.some(b => b.member_id === member.id)) { alert("Zaten kayıtlı!"); return; }
     await supabase.from('bookings').insert([{ class_id: classId, member_id: member.id, member_name: member.full_name, gym_id: currentGymId }]);
