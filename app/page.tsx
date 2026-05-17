@@ -329,8 +329,8 @@ export default function Dashboard() {
 
   const getAtRiskMembers = () => {
     const today = new Date(); const nextWeek = new Date(); nextWeek.setDate(today.getDate() + 7);
-    return members.filter((m) => {
-      if (!m.membership_end) return false;
+   return (members as any).filter((m: any) => {
+    if (!m.membership_end) return false;
       const end = new Date(m.membership_end); return end >= today && end <= nextWeek;
     });
   };
