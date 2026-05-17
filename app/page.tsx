@@ -697,7 +697,7 @@ export default function Dashboard() {
                               <p className="text-[10px] text-lime-400 font-black mb-1">{c.time} — {c.trainer}</p>
                               <p className="text-xl font-black italic text-white tracking-tighter">{c.name}</p>
                               <div className="flex flex-wrap gap-2 mt-3">
-                                {classBookings.map(b => (
+                                {classBookings.map((b: any) => (
                                   <span key={b.id} onClick={() => cancelBooking(b.id)} className="text-[9px] bg-zinc-800 text-zinc-400 px-2 py-1 rounded-md border border-zinc-700 cursor-pointer hover:bg-red-500 hover:text-white transition-all uppercase font-bold">{b.member_name} ✕</span>
                                 ))}
                                 {classBookings.length === 0 && <span className="text-[9px] text-zinc-600 italic">Henüz katılım yok</span>}
