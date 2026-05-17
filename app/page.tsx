@@ -449,7 +449,7 @@ export default function Dashboard() {
 
   // MOBİL ÜYE EKRANI
   if (appMode === 'member') {
-    const activeMember = members.find(m => m.full_name?.toLowerCase().includes(session.user.email.split('@')[0])) || members[0] || {
+    const activeMember = (members as any).find((m: any) => m.full_name?.toLowerCase().includes(session.user.email.split('@')[0])) || (members as any)[0] || {
       full_name: session.user.email.split('@')[0].toUpperCase(),
       membership_end: 'Lütfen antrenörünüzden LIFTRIX aktivasyonu isteyin.',
       current_program: 'Hoş geldiniz. Programınız henüz yüklenmemiştir.',
