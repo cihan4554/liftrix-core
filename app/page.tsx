@@ -963,7 +963,7 @@ export default function Dashboard() {
         </div>
       )}
 
-      {showFinanceModal && (userProfile?.role === 'superadmin' || userProfile?.role === 'admin') && (
+      {showFinanceModal && ((userProfile as any)?.role === 'superadmin' || (userProfile as any)?.role === 'admin') && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-[100] p-6 text-left">
           <div className="bg-zinc-950 border border-zinc-800 p-10 rounded-[3rem] w-full max-w-lg shadow-2xl animate-in zoom-in-95 duration-200">
             <h3 className="text-2xl font-black italic text-lime-400 mb-8 uppercase tracking-tighter">FİNANSAL İŞLEM EKLE</h3>
