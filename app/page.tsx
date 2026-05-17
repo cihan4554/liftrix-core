@@ -879,7 +879,7 @@ export default function Dashboard() {
           )}
 
           {/* SUPER ADMIN PANELİ: YENİ SALON VE PATRON OLUŞTURMA FORMU */}
-          {currentTab === 'superadmin' && userProfile?.role === 'superadmin' && (
+          {currentTab === 'superadmin' && (userProfile as any)?.role === 'superadmin' && (
             <div className="flex-1 flex gap-8 overflow-hidden animate-in fade-in duration-500">
               <div className="flex-1 bg-red-500/5 border border-red-500/20 rounded-[3rem] p-10 flex flex-col overflow-hidden shadow-2xl">
                  <div className="mb-8 border-b border-red-500/20 pb-4">
