@@ -368,9 +368,9 @@ export default function Dashboard() {
     fetchData();
   };
 
-  const cancelBooking = async (bookingId) => { await supabase.from('bookings').delete().eq('id', bookingId); fetchData(); };
+   const cancelBooking = async (bookingId: any) => { await supabase.from('bookings').delete().eq('id', bookingId); fetchData(); };
 
-  const sendWhatsApp = (member) => {
+   const sendWhatsApp = (member: any) => {
     const msg = `Merhaba ${member.full_name}, LIFTRIX üyeliğin dolmak üzere. Seni bekliyoruz!`;
     const phone = member.phone?.replace(/\D/g, '');
     if(phone) window.open(`https://wa.me/${phone.startsWith('90') ? phone : '90' + phone}?text=${encodeURIComponent(msg)}`, '_blank');
