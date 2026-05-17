@@ -537,7 +537,7 @@ export default function Dashboard() {
             <div className="pt-4 border-t border-zinc-800 mt-4"><button onClick={() => setCurrentTab('turnstile')} className="w-full bg-white text-black text-left px-5 py-4 rounded-xl text-xs font-black uppercase tracking-widest transition-all shadow-lg hover:scale-95 italic">TURNİKE MODU</button></div>
             
             {/* SUPER ADMIN (KURUCU) SEKMESİ */}
-            {userProfile?.role === 'superadmin' && (
+            {(userProfile as any)?.role === 'superadmin' && (
               <div className="pt-4 mt-4"><button onClick={() => setCurrentTab('superadmin')} className={`w-full text-left px-5 py-4 rounded-xl text-xs font-black uppercase tracking-widest transition-all shadow-lg ${currentTab === 'superadmin' ? 'bg-red-500 text-white scale-95' : 'bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white'}`}>SUPER ADMIN</button></div>
             )}
           </nav>
