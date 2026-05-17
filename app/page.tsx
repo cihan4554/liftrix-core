@@ -298,7 +298,7 @@ export default function Dashboard() {
     setLoading(false);
   };
 
-  const openEditProductModal = (e, product) => {
+ const openEditProductModal = (e: any, product: any) => {
     e.stopPropagation();
     setNewProduct({ id: product.id, name: product.name, price: product.price, stock: product.stock });
     setShowProductModal(true);
