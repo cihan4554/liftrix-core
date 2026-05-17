@@ -689,8 +689,8 @@ export default function Dashboard() {
                   {['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'].map(day => (
                     <div key={day} className="space-y-3">
                       <h4 className="text-[10px] text-zinc-600 font-black uppercase tracking-widest sticky top-0 bg-black/80 backdrop-blur-md py-2 z-10">{day}</h4>
-                      {classes.filter(c => c.day === day).map(c => {
-                        const classBookings = bookings.filter(b => b.class_id === c.id);
+                      {(classes as any).filter((c: any) => c.day === day).map((c: any) => {
+                        const classBookings = (bookings as any).filter((b: any) => b.class_id === c.id);
                         return (
                           <div key={c.id} className="bg-zinc-950 border border-zinc-800 p-6 rounded-3xl flex justify-between items-center group hover:border-lime-400/50 transition-all">
                             <div>
