@@ -385,7 +385,7 @@ export default function Dashboard() {
   const handleAddMember = async (e: any) => {
     e.preventDefault(); setLoading(true);
     const duration = newMember.membership_duration;
-    const fee = membershipPrices[duration];
+    const fee = (membershipPrices as any)[duration];
     const endDate = new Date(); endDate.setMonth(endDate.getMonth() + parseInt(duration));
     
     // 1. Üyeyi Kaydet
