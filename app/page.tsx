@@ -417,9 +417,8 @@ export default function Dashboard() {
   const totalIncome = (transactions as any).filter((t: any) => t.type === 'GELİR').reduce((sum: any, t: any) => sum + Number(t.amount), 0);
   const totalExpense = (transactions as any).filter((t: any) => t.type === 'GİDER').reduce((sum: any, t: any) => sum + Number(t.amount), 0);
   const netBalance = totalIncome - totalExpense;
-  const cashBalance = transactions.filter(t => t.method === 'NAKİT').reduce((sum, t) => sum + (t.type === 'GELİR' ? Number(t.amount) : -Number(t.amount)), 0);
-  const cardBalance = transactions.filter(t => t.method === 'KART').reduce((sum, t) => sum + (t.type === 'GELİR' ? Number(t.amount) : -Number(t.amount)), 0);
-
+  const cashBalance = (transactions as any).filter((t: any) => t.method === 'NAKİT').reduce((sum: any, t: any) => sum + (t.type === 'GELİR' ? Number(t.amount) : -Number(t.amount)), 0);
+  const cardBalance = (transactions as any).filter((t: any) => t.method === 'KART').reduce((sum: any, t: any) => sum + (t.type === 'GELİR' ? Number(t.amount) : -Number(t.amount)), 0);
   // ==========================================
   // UI RENDER KISMI
   // ==========================================
