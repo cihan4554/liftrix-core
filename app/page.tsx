@@ -636,7 +636,7 @@ export default function Dashboard() {
                         </div>
                         <div className="text-right leading-none">
                           <p className="text-zinc-600 text-[10px] font-black uppercase tracking-widest mb-1 italic">BİTİŞ TARİHİ</p>
-                          <p className="text-xl font-mono text-orange-400 leading-none">{selectedMember.membership_end}</p>
+                          <p className="text-xl font-mono text-orange-400 leading-none">{(selectedMember as any).membership_end}</p>
                         </div>
                       </div>
                       <div className="grid grid-cols-2 gap-8 text-left">
