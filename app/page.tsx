@@ -665,8 +665,8 @@ export default function Dashboard() {
                         <button onClick={handleUpdateMember} className="flex-1 bg-lime-400 text-black py-4 rounded-2xl font-black uppercase italic text-xs shadow-lg transition-all">KAYDET</button>
                       ) : (
                         <>
-                          <button onClick={() => handleAction('GİRİŞ', selectedMember.full_name)} className="flex-1 bg-lime-400 text-black py-4 rounded-2xl font-black uppercase italic text-xs hover:scale-105 active:scale-95 transition-all">GİRİŞİ KAYDET</button>
-                          <button onClick={() => handleAction('ÇIKIŞ', selectedMember.full_name)} className="flex-1 bg-zinc-800 text-white py-4 rounded-2xl font-black uppercase italic text-xs border border-zinc-700 hover:bg-zinc-700 active:scale-95 transition-all">ÇIKIŞI KAYDET</button>
+                          <button onClick={() => handleAction('GİRİŞ', (selectedMember as any).full_name)} className="flex-1 bg-lime-400 text-black py-4 rounded-2xl font-black uppercase italic text-xs hover:scale-105 active:scale-95 transition-all">GİRİŞİ KAYDET</button>
+                          <button onClick={() => handleAction('ÇIKIŞ', (selectedMember as any).full_name)} className="flex-1 bg-zinc-800 text-white py-4 rounded-2xl font-black uppercase italic text-xs border border-zinc-700 hover:bg-zinc-700 active:scale-95 transition-all">ÇIKIŞI KAYDET</button>         
                         </>
                       )}
                     </div>
