@@ -544,8 +544,7 @@ export default function Dashboard() {
           
           <div className="mt-auto pt-6 shrink-0 group-hover:block hidden">
              <div className="text-[9px] text-zinc-500 mb-1 font-black uppercase tracking-widest text-center">{session.user.email}</div>
-             <div className="text-[9px] text-lime-400/70 mb-3 font-black uppercase tracking-widest text-center border border-lime-400/20 rounded-md py-1">{userProfile?.role}</div>
-             <button onClick={handleLogout} className="w-full bg-red-500/10 text-red-500 border border-red-500/20 px-5 py-4 rounded-xl text-xs font-black uppercase tracking-widest transition-all hover:bg-red-500 hover:text-white">ÇIKIŞ YAP</button>
+              <div className="text-[9px] text-lime-400/70 mb-3 font-black uppercase tracking-widest text-center border border-lime-400/20 rounded-md py-1">{(userProfile as any)?.role}</div>             <button onClick={handleLogout} className="w-full bg-red-500/10 text-red-500 border border-red-500/20 px-5 py-4 rounded-xl text-xs font-black uppercase tracking-widest transition-all hover:bg-red-500 hover:text-white">ÇIKIŞ YAP</button>
           </div>
         </div>
       </aside>
