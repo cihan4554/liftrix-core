@@ -864,8 +864,8 @@ export default function Dashboard() {
                      <div key={month} className="flex justify-between items-center bg-zinc-900 border border-zinc-800 p-6 rounded-2xl group hover:border-lime-400/30 transition-colors">
                         <span className="font-black text-sm uppercase text-zinc-300 group-hover:text-white transition-colors">{month} Aylık Paket Ücreti (₺)</span>
                         <input type="number" required className="bg-zinc-950 border border-zinc-800 rounded-xl p-4 text-right font-black w-32 outline-none text-lime-400 focus:border-lime-400 transition-colors"
-                          value={membershipPrices[month] || ''}
-                          onChange={e => setMembershipPrices({...membershipPrices, [month]: e.target.value})} />
+                          value={(membershipPrices as any)[month] || ''}
+                          onChange={e => (setMembershipPrices as any)({...membershipPrices, [month]: e.target.value})} />
                      </div>
                    ))}
                    <div className="pt-4 mt-8 border-t border-zinc-900">
