@@ -621,10 +621,10 @@ export default function Dashboard() {
                       <div className="flex justify-between items-start mb-8 pr-40">
                         <div className="text-left">
                           {isEditing ? (
-                            <input className="bg-zinc-800 text-white text-4xl font-black italic uppercase outline-none border-b border-lime-400 w-full" value={selectedMember.full_name} onChange={(e) => setSelectedMember({ ...selectedMember, full_name: e.target.value })} />
-                          ) : (
-                            <h3 className="text-4xl font-black italic uppercase text-white tracking-tighter leading-none">{selectedMember.full_name}</h3>
-                          )}
+                            <input className="bg-zinc-800 text-white text-4xl font-black italic uppercase outline-none border-b border-lime-400 w-full" value={(selectedMember as any).full_name} onChange={(e) => (setSelectedMember as any)({ ...(selectedMember as any), full_name: e.target.value })} />
+                            ) : (
+                            <h3 className="text-4xl font-black italic uppercase text-white tracking-tighter leading-none">{(selectedMember as any).full_name}</h3>
+                            )}
                           <div className="flex gap-2 mt-4">
                             <span className="text-[10px] bg-lime-400 text-black px-3 py-1 rounded-full font-black uppercase italic tracking-widest">AKTİF ÜYE</span>
                             {isEditing ? (
