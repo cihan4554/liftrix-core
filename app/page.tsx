@@ -887,7 +887,7 @@ export default function Dashboard() {
                     <p className="text-xs text-zinc-400 mt-2 font-bold uppercase tracking-widest">Sisteme kayıtlı aktif şubeler</p>
                  </div>
                  <div className="flex-1 overflow-y-auto space-y-4 pr-2 custom-scrollbar">
-                    {allGyms.map(gym => (
+                    {(allGyms as any).map((gym: any) => (
                       <div key={gym.id} className="bg-zinc-950 border border-zinc-800 p-6 rounded-3xl flex justify-between items-center">
                          <div>
                             <p className="text-xl font-black text-white italic tracking-tighter uppercase">{gym.name}</p>
