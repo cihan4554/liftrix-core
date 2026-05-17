@@ -719,7 +719,7 @@ export default function Dashboard() {
                   <p className="text-[10px] text-zinc-500 font-black uppercase mb-4 italic text-center">Seçili Üye (Kayıt İçin)</p>
                   {selectedMember ? (
                     <div className="text-center animate-in zoom-in">
-                      <p className="text-xl font-black italic text-lime-400 uppercase leading-tight">{selectedMember.full_name}</p>
+                      <p className="text-xl font-black italic text-lime-400 uppercase leading-tight">{(selectedMember as any).full_name}</p>
                       <button onClick={() => setSelectedMember(null)} className="text-[9px] text-zinc-600 mt-2 hover:text-white uppercase font-bold underline">TEMİZLE</button>
                     </div>
                   ) : (
