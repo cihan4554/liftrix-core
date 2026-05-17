@@ -412,10 +412,10 @@ export default function Dashboard() {
     setLoading(false);
   };
 
-  const filteredMembers = members.filter((m) => m.full_name?.toLowerCase().includes(searchQuery.toLowerCase()));
-  const mrr = members.reduce((sum, m) => sum + (Number(m.monthly_fee) || 0), 0);
-  const totalIncome = transactions.filter(t => t.type === 'GELİR').reduce((sum, t) => sum + Number(t.amount), 0);
-  const totalExpense = transactions.filter(t => t.type === 'GİDER').reduce((sum, t) => sum + Number(t.amount), 0);
+  const filteredMembers = (members as any).filter((m: any) => m.full_name?.toLowerCase().includes(searchQuery.toLowerCase()));
+  const mrr = (members as any).reduce((sum: any, m: any) => sum + (Number(m.monthly_fee) || 0), 0);
+  const totalIncome = (transactions as any).filter((t: any) => t.type === 'GELİR').reduce((sum: any, t: any) => sum + Number(t.amount), 0);
+  const totalExpense = (transactions as any).filter((t: any) => t.type === 'GİDER').reduce((sum: any, t: any) => sum + Number(t.amount), 0);
   const netBalance = totalIncome - totalExpense;
   const cashBalance = transactions.filter(t => t.method === 'NAKİT').reduce((sum, t) => sum + (t.type === 'GELİR' ? Number(t.amount) : -Number(t.amount)), 0);
   const cardBalance = transactions.filter(t => t.method === 'KART').reduce((sum, t) => sum + (t.type === 'GELİR' ? Number(t.amount) : -Number(t.amount)), 0);
