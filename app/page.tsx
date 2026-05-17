@@ -526,7 +526,7 @@ export default function Dashboard() {
             <button onClick={() => setCurrentTab('scheduling')} className={`w-full text-left px-5 py-4 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${currentTab === 'scheduling' ? 'bg-lime-400 text-black scale-95' : 'text-zinc-500 hover:bg-zinc-900'}`}>DERS PROGRAMI</button>
             <button onClick={() => setCurrentTab('store')} className={`w-full text-left px-5 py-4 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${currentTab === 'store' ? 'bg-lime-400 text-black scale-95' : 'text-zinc-500 hover:bg-zinc-900'}`}>MAĞAZA (POS)</button>
             
-            {(userProfile?.role === 'superadmin' || userProfile?.role === 'admin') && (
+            {((userProfile as any)?.role === 'superadmin' || (userProfile as any)?.role === 'admin') && (
               <>
                 <button onClick={() => setCurrentTab('reports')} className={`w-full text-left px-5 py-4 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${currentTab === 'reports' ? 'bg-lime-400 text-black scale-95' : 'text-zinc-500 hover:bg-zinc-900'}`}>FİNANS & RAPOR</button>
                 {/* AYARLAR SEKMESİ */}
