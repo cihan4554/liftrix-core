@@ -313,10 +313,10 @@ export default function Dashboard() {
     });
   };
 
-  const removeFromCart = (productId) => setCart(prev => prev.filter(item => item.id !== productId));
-  const cartTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  const removeFromCart = (productId: any) => (setCart as any)((prev: any) => prev.filter((item: any) => item.id !== productId));
+  const cartTotal = (cart as any).reduce((sum: any, item: any) => sum + (item.price * item.quantity), 0);
 
-  const handleCheckout = async (method) => {
+  const handleCheckout = async (method: any) => {
     if (cart.length === 0) return;
     setLoading(true);
     const itemNames = cart.map(item => `${item.quantity}x ${item.name}`).join(', ');
