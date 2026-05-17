@@ -577,7 +577,7 @@ export default function Dashboard() {
                 <section className="col-span-2 bg-zinc-900/30 border border-zinc-900 rounded-[3rem] p-10 overflow-hidden flex flex-col">
                   <div className="flex justify-between items-center mb-8 border-b border-zinc-800/50 pb-4"><h4 className="text-xs font-black uppercase tracking-[0.4em] text-zinc-500 italic">Anlık Akış Logları</h4><span className="w-2 h-2 bg-red-500 rounded-full animate-pulse shadow-[0_0_10px_red]"></span></div>
                   <div className="grid grid-cols-1 gap-4 overflow-y-auto pr-2 custom-scrollbar">
-                    {checkins.map((item) => (
+                    {(checkins as any).map((item: any) => (
                       <div key={item.id} className="bg-zinc-950/80 border border-zinc-800 p-3 rounded-[1.5rem] flex justify-between items-center group transition-all hover:border-lime-400">
                         <div className="flex items-center gap-5"><div className={`w-3 h-3 rounded-full ${item.action === 'GİRİŞ' ? 'bg-lime-400 shadow-[0_0_8px_#a3e635]' : 'bg-red-500 shadow-[0_0_8px_#ef4444]'}`}></div><div><p className="font-black text-sm uppercase italic text-white tracking-tighter group-hover:text-lime-400 transition-colors">{item.member_name}</p><p className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest">{item.action} YAPTI</p></div></div>
                         <div className="text-right font-mono text-[10px] text-zinc-500 italic">{new Date(item.created_at).toLocaleTimeString('tr-TR')}</div>
