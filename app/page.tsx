@@ -319,9 +319,9 @@ export default function Dashboard() {
   const handleCheckout = async (method: any) => {
     if (cart.length === 0) return;
     setLoading(true);
-    const itemNames = cart.map(item => `${item.quantity}x ${item.name}`).join(', ');
-    for (let item of cart) {
-      await supabase.from('products').update({ stock: item.stock - item.quantity }).eq('id', item.id);
+    const itemNames = (cart as any).map((item: any) => `${item.quantity}x ${item.name}`).join(', ');
+    for (let item of (cart as any)) {
+    await supabase.from('products').update({ stock: item.stock - item.quantity }).eq('id', item.id);
     }
     await supabase.from('finance_logs').insert([{ type: 'GELİR', amount: cartTotal, method: method, description: `Mağaza: ${itemNames}`, gym_id: currentGymId }]);
     setCart([]); fetchData(); setLoading(false);
